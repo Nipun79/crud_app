@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>CRUD</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+<div class="card" style="width: 30em;padding: 15px;">
+        <div class="container">
+            <div class="row g-2">
+              <div class="col-6">
+                  <form action="{% url 'task_edit' task.id %}" method="get">
+                <div class="p-2 border bg-light ">
+                <input type="text" value="{{task.name}}" name="create-task-name">
+                </div>
+              </div>
+              <div class="col-6">
+                    {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Edit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </body>
+</html>
